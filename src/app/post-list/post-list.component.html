@@ -1,0 +1,25 @@
+<div style="background-color: yellow; width: 100%; height: 100px; overflow-y: scroll;" 
+		infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+    [scrollWindow]="false">
+
+<ul class="u-listReset" >
+  <li *ngFor="let post of posts" style="width:50%; background-color: white; height: 110px;float:left;">
+  	<!-- | paginate: { itemsPerPage: 2, currentPage: page, totalItems: count } -->
+
+  	<!-- <img src="" /> -->
+  	<!-- routerLink="/post/{{post.sys.id}}" -->
+    <a *ngIf="category" [routerLink]="['post', post.fields.slug]">{{ post.fields.title }}</a>
+    <a *ngIf="!category" [routerLink]="['/post', post.fields.slug]">{{ post.fields.title }}</a>
+  </li>
+</ul>
+
+<!-- <pagination-controls 
+(pageChange)="nextPage($event)"
+	previousLabel="Prev"
+  nextLabel="Next"
+  responsive="true"></pagination-controls> -->
+
+</div>

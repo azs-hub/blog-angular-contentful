@@ -1,0 +1,17 @@
+<div class="row">
+<div class="col-xs-12">
+	<div class="carousel" >
+		<ngb-carousel *ngIf="posts">
+			<ng-template ngbSlide *ngFor="let post of posts">
+		    <div class="picsum-img-wrapper">
+		      <img [src]="post.fields.featuredImage.fields.file.url" alt="Random first slide" class="d-block w-100"/>
+		    </div>
+		    <div class="carousel-caption">
+		      <h3>{{post.fields.title}}</h3>
+		      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+		    </div>
+		  </ng-template>
+		</ngb-carousel>
+	</div>
+</div>
+</div>

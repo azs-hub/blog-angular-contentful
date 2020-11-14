@@ -1,0 +1,37 @@
+<img src="./assets/img/logo.png" class="img-fluid" alt="Logo My little Baba">
+			
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">SHOP</a>
+  </li>
+</ul>
+
+<hr/>
+
+<ul class="nav flex-column">
+	<li  class="nav-item">
+		<a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">
+			home
+		</a>
+	</li>
+
+	<li  class="nav-item">
+		<a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/posts']">
+			all posts
+		</a>
+	</li>
+
+  <li  class="nav-item" *ngFor="let link of nav">
+    <a class="nav-link" [routerLink]="['/posts', link.fields.slug]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+  		{{ link.fields.title }}
+   	</a>
+  </li>
+</ul>
+
+<hr/>
+			
+<ul class="nav flex-column">
+  <li class="nav-item">
+    <a class="nav-link" href="#">SHOP</a>
+  </li>
+</ul>
